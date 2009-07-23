@@ -1,7 +1,9 @@
+enginator.gemspec
 History.txt
 lib/enginator.rb
 bin/Enginator.rb
 Rakefile
+Manifest
 README
 rails_generators/USAGE
 rails_generators/templates/my_db.yml
@@ -23,4 +25,3 @@ rails_generators/engine_generator.rb
 README.txt
 Readme.rdoc
 test/test_enginator.rb
-Manifest
