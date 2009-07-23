@@ -1,0 +1,25 @@
+= engine_generator
+
+* http://github.com/#{github_username}/#{project_name}
+
+== DESCRIPTION:
+
+Engine Generator is Used for generating a Rails Engine
+In this engine has separate Database which Does not relate with Main application database
+
+While installing application as engine we have to copy several files 
+After copy Engine has one single database but here engine has its own database
+
+
+
+1)sudo gem install amardaxini-engine_generator
+2)./script/generate engine engine_name sourcedir:pluggapleapplicationpath
+3)change user_name and password in database.yml
+4)rake db:create:all
+5)rake db:migrate
+If database is other than mysql change database.yml
+Some times it Giving an error 
+A copy of ApplicationController has been removed from the module tree but is still active!
+Config/environment/your mode like development.rb
+change config.cache_classes=false to true
+

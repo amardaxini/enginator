@@ -1,0 +1,31 @@
+Description:
+    Explain the generator
+    This generator behaves like as pluguin generator
+    but it copies your app folder of your application
+    to vendor/plugin/<%= file_name %>/app
+    
+if error A copy of ApplicationController has been removed from the module tree but is still active!
+main_app/config/environments/development.rbmake it true if false config.cache_classes = true
+
+Example:
+1)./script/generate engine engine_name sourcedir:pluggapleapplicationpath
+2)change user_name and password in database.yml
+3)rake db:create:all
+4)rake db:migrate
+If database is other than mysql change database.yml
+  if source_dir is not given then copies own app folder
+The above generator copy your source application app folder to vendor/app/#{engine_name}/app
+Copy routes.rb
+Check that route file any map.root or any map.{...} change as needed 
+It update database.yml file added another mysql adapter named with engine_name_dev with engine_name_dev database
+Change username and password 
+Then rake db:create:all or create database manually
+rake db:migrate
+Some times it Giving an error 
+A copy of ApplicationController has been removed from the module tree but is still active!
+Config/environment/your mode like development.rb
+change config.cache_classes=false to true
+
+     
+        
+        
