@@ -1,48 +1,29 @@
-= enginator
+= engine_generator
 
-* FIX (url)
+* http://github.com/amardaxini/enginator
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Engine Generator is Used for generating a Rails Engine
+In this engine has separate Database which Does not relate with Main application database
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+While installing application as engine we have to copy several files 
+After copy Engine has one single database but here engine has its own database
+ 
+# sudo gem install amardaxini-engine_generator
+# /script/generate engine engine_name sourcedir:pluggapleapplicationpath
+# change user_name and password in database.yml
+# rake db:create:all
+# rake db:migrate
+If database is other than mysql change database.yml
+What it Does 
+# It copies sourcepath/app folder to engine name/app
+# Add self.connection :#{engine name}_dev to all model
+# Removing application controller and added engine controller which inherits from main app controller 
+# Remaining Application controller in heri from engine controller
+# Copy routes.rb and paste into vendor/plugins/engine/config/routes.rb
+# Copy migrate folder into vendor/plugins/engine/db/migrate 
+# Making Significant change in migration file thwn paste into mainapp/db/migrate folder
 
-== SYNOPSIS:
-
-  FIX (code sample of usage)
-
-== REQUIREMENTS:
-
-* FIX (list of requirements)
-
-== INSTALL:
-
-* FIX (sudo gem install, anything else)
-
-== LICENSE:
-
-(The MIT License)
-
-Copyright (c) 2009 FIX
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
