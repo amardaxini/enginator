@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('enginator', '0.1.1') do |p|
+Echoe.new('enginator', '0.1.2') do |p|
   p.project        = "enginator"
   p.description    = "A collection of useful generator scripts for Rails engine."
   p.url            = ""
