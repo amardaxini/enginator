@@ -201,7 +201,7 @@ class EngineGenerator < Rails::Generator::NamedBase
       application_helper_file .each do |line|
         application_content += "#{line} " 
       end
-      app1 = "module #{plural_class_name}"
+      app1 = "module #{plural_class_name}Helper"
       application_content.sub!(/module ApplicationHelper{1}/,"#{app1}")
       application_helper_file = File.open("#{plugin_path}/app/helpers/application_helper.rb","w")
       application_helper_file.write(application_content)
