@@ -26,5 +26,7 @@ What it Does
 # Copy routes.rb and paste into vendor/plugins/engine/config/routes.rb
 # Copy migrate folder into vendor/plugins/engine/db/migrate 
 # Making Significant change in migration file thwn paste into mainapp/db/migrate folder
+# rename application_helper to engine_names_helper
+# rename application.html.erb to engine_names.html.erb 
 
 

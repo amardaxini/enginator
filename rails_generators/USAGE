@@ -12,8 +12,9 @@ Example:
 2)change user_name and password in database.yml
 3)rake db:create:all
 4)rake db:migrate
+
 If database is other than mysql change database.yml
-  if source_dir is not given then copies own app folder
+if source_dir is not given then copies own app folder
 The above generator copy your source application app folder to vendor/app/#{engine_name}/app
 Copy routes.rb
 Check that route file any map.root or any map.{...} change as needed 

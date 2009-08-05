@@ -98,7 +98,10 @@ class EngineGenerator < Rails::Generator::NamedBase
       # now Change Plugin ApplicationController to #plural_class_name and inhrit from main ApplicationController
       #prepend line require 'application_controller.rb'
       change_application_controller_of_engine
-      
+      #change application_helper.rb to filename.helper
+       change_application_helper_of_engine
+       #renaming application.html.erb to file_name.html.erb
+       rename_application_html
       #Added all migration to base migration      
       FileUtils.cp_r(@plugin_path+"/db/migrate/.",'db/migrate')
    end
@@ -191,7 +194,26 @@ class EngineGenerator < Rails::Generator::NamedBase
       File.rename("#{plugin_path}/app/controllers/application_controller.rb","#{plugin_path}/app/controllers/#{plural_name}_controller.rb")
    end
    
-   
+     def change_application_helper_of_engine
+     
+      application_content = ""
+      application_helper_file = File.open("#{plugin_path}/app/helpers/application_helper.rb","r")
+      application_helper_file .each do |line|
+        application_content += "#{line} " 
+      end
+      app1 = "module #{plural_class_name}"
+      application_content.sub!(/module ApplicationHelper{1}/,"#{app1}")
+      application_helper_file = File.open("#{plugin_path}/app/helpers/application_helper.rb","w")
+      application_helper_file.write(application_content)
+      application_helper_file.close
+      File.rename("#{plugin_path}/app/helpers/application_helper.rb","#{plugin_path}/app/helpers/#{plural_name}_helper.rb")
+   end
+   def rename_application_html
+   file_flag = File.exists?("#{plugin_path}/app/views/layouts/application.html.erb")
+     if file_flag
+      File.rename("#{plugin_path}/app/views/layouts/application.html.erb","#{plugin_path}/app/views/layouts/#{plural_name}.html.erb")
+     end
+   end
    
 end
 

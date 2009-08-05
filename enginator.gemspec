@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Amar Daxini"]
-  s.date = %q{2009-07-23}
+  s.date = %q{2009-08-05}
   s.default_executable = %q{Enginator.rb}
   s.description = %q{A collection of useful generator scripts for Rails engine.}
   s.email = %q{amar.daxini (at) gmail (dot) com}
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Enginator", "--main", "README"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{enginator}
-  s.rubygems_version = %q{1.3.4}
+  s.rubygems_version = %q{1.3.5}
   s.summary = %q{A collection of useful generator scripts for Rails engine.}
   s.test_files = ["test/test_enginator.rb"]
 
