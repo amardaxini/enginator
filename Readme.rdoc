@@ -39,4 +39,8 @@ What it Does
 
 # Making Significant change in migration file thwn paste into mainapp/db/migrate folder
 
+# rename application_helper to engine_names_helper
+
+# rename application.html.erb to engine_names.html.erb 
+
 
